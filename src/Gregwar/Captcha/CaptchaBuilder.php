@@ -595,7 +595,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
      * Returns a random number or the next number in the
      * fingerprint
      */
-    protected function rand($min, $max)
+    protected function rand($min, $max) :int
     {
         if (!is_array($this->fingerprint)) {
             $this->fingerprint = array();
@@ -609,7 +609,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
             $this->fingerprint[] = $value;
         }
 
-        return $value;
+        return intval($value);
     }
 
     /**
