@@ -341,7 +341,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
         }
 
         // Gets the text size and start position
-        $size = $width / $length - $this->rand(0, 3) - 1;
+        $size = (int) $width / $length - $this->rand(0, 3) - 1;
         $box = \imagettfbbox($size, 0, $font, $phrase);
         $textWidth = $box[2] - $box[0];
         $textHeight = $box[1] - $box[7];
@@ -362,7 +362,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
             $w = $box[2] - $box[0];
             $angle = $this->rand(-$this->maxAngle, $this->maxAngle);
             $offset = $this->rand(-$this->maxOffset, $this->maxOffset);
-            \imagettftext($image, $size, $angle, $x, $y + $offset, $col, $font, $symbol);
+            \imagettftext($image, (int) $size, (int) $angle, (int) $x, (int) $y + $offset, $col, $font, $symbol);
             $x += $w;
         }
 
