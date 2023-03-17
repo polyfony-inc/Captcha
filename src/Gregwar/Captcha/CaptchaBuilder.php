@@ -34,6 +34,11 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     protected $lineColor = null;
 
     /**
+     * @var resource
+     */
+    protected $background = null;
+    
+    /**
      * @var array
      */
     protected $backgroundColor = null;
